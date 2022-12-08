@@ -1,0 +1,90 @@
+body{
+    background-image: url(image/fon.jpg);
+    
+}
+
+.book_b1{
+   
+    margin-left: 20%;
+    margin-right: 20%:
+
+}
+p{
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+}
+img{
+    border: 5px solid transparent;
+}
+
+
+.footer{
+    position: static;
+    width: 97%; 
+      left: 0; bottom: 0; 
+      padding: 20px; 
+      background: #cdaa51; 
+      color: black;
+}
+
+.image{
+        position: static;
+        text-align: center;
+        background-repeat: no-repeat  ;
+        background-size: 100% 100%;
+        opacity: 100%;
+        height: 100%;
+        width:  100.5%;
+        margin-left: -10px;
+        background-image: url(image/wpapers_ru_Ежик-в-тумане.jpg);
+      }
+.header{
+  position: fixed;
+  margin-top: -2%;
+  opacity: 100%;
+  width: 100%;
+    background: #cdaa51;
+    height: 85px;
+  
+}
+.header_left{
+  width: 125px;
+  height: 40px;
+  margin-left: 10%;
+  margin-top: -2%;
+  text-align: left;
+}
+
+
+.header_right a{
+  margin-top: 15px;
+  color: black;
+  background: -webkit-linear-gradient(right, blue 0, blue 33.3%, blue 33.3%, blue 66.6%, blue 66.6%, blue) bottom no-repeat;
+   background-size: 0% 1px;
+  transition: 0.95s;
+}
+
+.header_right a:hover{
+  background-size: 100% 1px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+
+.header_right{
+  margin-top: 0%;
+  margin-right: 3%;
+  list-style: none;
+    position: absolute;
+    top: 10px;
+    right: 100px;
+}

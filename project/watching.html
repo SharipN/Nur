@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Просмотр</title>
+    <link rel="stylesheet" href="Style_Nurgisa.css">
+    
+
+    <style>
+        
+        .but{
+            box-sizing: 20px;
+            margin-left: 0.5px;
+            background-color: bisque;       
+        }
+        
+        .buttons{
+            margin-left: 20%;
+        }
+        .media{
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        #progress{
+        width:80%;
+        margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+        <div class="b1">
+            <div class="image">
+                <div class="header">
+                    <div class="header_left">
+                        <br>
+                        <h2>Ежик<br> В Тумане</h2>
+                    </div>
+                    <div class="header_right">
+                        <a class="button" href="index.html">Главная</a>
+                        <a class="button" href="watching.html">Смотреть</a>
+                        <a class="button" href="book.html">Читать и слушать</a>
+                        <a class="button" href="sozd.html">Создатели</a>
+                    </div>
+              </div>                      
+         </div> 
+         
+
+        <br><br><br><br><br>
+<div>
+    <div class="media">
+<video width="1024" height="768" id="video_player">
+    <source src="Content/video.mp4" type="video/mp4">
+</video>
+<div>
+<progress id="progress" max="100" value="0"></progress>
+</div>    
+
+    <div class="buttons">
+        <button class="but"  id="slow">Медленнее</button>
+        <button class="but" id="normal">Норма</button>
+        <button class="but" id="fast">Быстрее</button>
+        <button class="but" id="play">Пуск</button>
+        <button class="but" id="pause">Пауза</button>
+        <button class="but" id="stop">Стоп</button>
+        <input type="range" id="volume" min=0 max=100>Звук</button>
+    </div>    
+</div>
+</div>
+
+    <script>
+        document.querySelector('#play').onclick = play;
+        document.querySelector('#pause').onclick = pause;
+        document.querySelector('#stop').onclick = stop;
+        document.querySelector('#fast').onclick = fast;
+        document.querySelector('#slow').onclick = slow;
+        document.querySelector('#normal').onclick = normal;
+        document.querySelector('#volume').oninput = volume;
+
+        let video;
+        let dislay;
+        let progress;
+
+        video = document.querySelector('#video_player')
+        progress = document.querySelector('#progress');
+
+        video.ontimeupdate = progressupdate;
+        progress.onclick = videorewind;
+
+        function play(){
+            video.play();
+        }
+        function pause(){
+            video.pause();
+
+        }
+        function stop(){
+            video.pause();
+            video.currentTime = 0;
+        }
+        function fast(){
+            video.play();
+            video.playbackRate = 2;
+        }
+        function slow(){
+            video.play();
+            video.playbackRate = 0.5;
+        }
+        function normal(){
+            video.play();
+            video.playbackRate = 1;
+        }
+        function volume() {
+            let v = this.value;
+            console.log(v);
+            video.volume = v/100;
+        }
+        function progressupdate(){
+            console.log(video.currentTime);
+            let d = video.duration;
+            let c = video.currentTime;
+            progress.value = (100 * c) / d
+        }
+        function videorewind(){
+            let w = this.offsetWidth;
+            let o = event.offsetX;
+            console.log(w);
+            console.log(o);
+            this.value = 100 * o/w;
+            video.pause;
+            video.currentTime = video.duration * (o/w);
+            video.play;
+        }
+    </script>
+</body>
+</html>
